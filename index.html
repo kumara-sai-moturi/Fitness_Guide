@@ -1,0 +1,1826 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>BodyBlueprint | Workout & Diet Planner</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="sidebar">
+
+    <div class="brand" id="brandHome">
+
+        <div class="brand-mark">
+            F
+        </div>
+
+        <div>
+            <h2>FitCore</h2>
+            <span>Fitness Planner</span>
+        </div>
+
+    </div>
+
+
+    <nav>
+
+        <button
+            class="nav-item active"
+            data-page="dashboard"
+        >
+            <span>⌂</span>
+            Dashboard
+        </button>
+
+
+        <button
+            class="nav-item"
+            data-page="profile"
+        >
+            <span>◉</span>
+            Profile & Calories
+        </button>
+
+
+        <button
+            class="nav-item"
+            data-page="diet"
+        >
+            <span>◈</span>
+            Food Diet
+        </button>
+
+
+        <button
+            class="nav-item"
+            data-page="workout"
+        >
+            <span>⚡</span>
+            Workout Plan
+        </button>
+
+
+        <button
+            class="nav-item"
+            data-page="progress"
+        >
+            <span>↗</span>
+            Progress
+        </button>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <div class="mini-card">
+
+            <b>Train smart.</b>
+
+            <small>
+                Choose the level and plan that matches
+                your experience, then recover consistently.
+            </small>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="main">
+
+
+<!-- =====================================================
+     DASHBOARD
+===================================================== -->
+
+<section
+    id="dashboard"
+    class="page active"
+>
+
+    <div class="hero">
+
+        <div class="hero-copy">
+
+            <span class="eyebrow">
+                YOUR BODY. YOUR BLUEPRINT.
+            </span>
+
+            <h1>
+                Train smarter.<br>
+                <strong>Build stronger.</strong>
+            </h1>
+
+            <p>
+                Follow a structured training plan based on
+                your experience level, complete your daily
+                warm-up and use your calorie target to guide
+                your food diet.
+            </p>
+
+            <button
+                class="primary-btn"
+                data-go="profile"
+            >
+                Set My Calories →
+            </button>
+
+        </div>
+
+
+        <div class="hero-image">
+
+            <img
+                src="reference_pic.png"
+                alt="BodyBlueprint fitness model"
+            >
+
+        </div>
+
+    </div>
+
+
+
+    <div class="section-title">
+
+        <span class="eyebrow">
+            PERSONALIZED TRAINING
+        </span>
+
+        <h2>
+            Your Training Week
+        </h2>
+
+    </div>
+
+
+
+    <div class="stats-grid">
+
+
+        <div class="stat-card">
+
+            <span class="stat-icon purple">
+                ⚡
+            </span>
+
+            <div>
+
+                <small>
+                    TODAY
+                </small>
+
+                <h3 id="dashDay">
+                    Monday
+                </h3>
+
+                <em id="dashWorkoutTitle">
+                    Chest
+                </em>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="stat-card">
+
+            <span class="stat-icon blue">
+                ⏱
+            </span>
+
+            <div>
+
+                <small>
+                    SESSION
+                </small>
+
+                <h3>
+                    75–100 min
+                </h3>
+
+                <em>
+                    Including warm-up
+                </em>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="stat-card">
+
+            <span class="stat-icon orange">
+                🔥
+            </span>
+
+            <div>
+
+                <small>
+                    CALORIE TARGET
+                </small>
+
+                <h3 id="dashCalories">
+                    —
+                </h3>
+
+                <em>
+                    estimated kcal/day
+                </em>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="stat-card">
+
+            <span class="stat-icon green">
+                🎯
+            </span>
+
+            <div>
+
+                <small>
+                    GOAL
+                </small>
+
+                <h3 id="dashGoal">
+                    Build Muscle
+                </h3>
+
+                <em>
+                    nutrition target
+                </em>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="two-column">
+
+
+        <div class="card">
+
+            <div class="card-head">
+
+                <div>
+
+                    <span class="eyebrow">
+                        TODAY
+                    </span>
+
+                    <h2 id="dashWorkoutHeading">
+                        Monday · Chest
+                    </h2>
+
+                </div>
+
+
+                <button
+                    class="text-btn"
+                    data-go="workout"
+                >
+                    Open Workout →
+                </button>
+
+            </div>
+
+
+            <div id="dashExercises"></div>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="card-head">
+
+                <div>
+
+                    <span class="eyebrow">
+                        DAILY FLOW
+                    </span>
+
+                    <h2>
+                        Training + Recovery
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="flow">
+
+                <div>
+                    <b>01</b>
+
+                    <span>
+                        10–15 min<br>
+                        Warm-up
+                    </span>
+                </div>
+
+
+                <div>
+                    <b>02</b>
+
+                    <span>
+                        50–80 min<br>
+                        Strength work
+                    </span>
+                </div>
+
+
+                <div>
+                    <b>03</b>
+
+                    <span>
+                        5–10 min<br>
+                        Cool-down
+                    </span>
+                </div>
+
+            </div>
+
+
+            <p class="muted">
+
+                Every listed strength exercise is
+                <strong>4 sets × 8 reps</strong>.
+                Rest about 60–120 seconds between sets
+                and use a controlled weight.
+
+            </p>
+
+
+            <button
+                class="primary-btn dark-btn"
+                data-go="diet"
+            >
+                View Food Diet →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROFILE
+===================================================== -->
+
+<section
+    id="profile"
+    class="page"
+>
+
+    <div class="page-header">
+
+        <span class="eyebrow">
+            STEP 01 · CALORIE SETUP
+        </span>
+
+        <h1>
+            Profile & Calorie Target
+        </h1>
+
+        <p>
+            Enter your basic details and goal.
+            Body measurements are intentionally not required.
+        </p>
+
+    </div>
+
+
+
+    <div class="profile-layout">
+
+
+        <div class="card form-card">
+
+            <h2>
+                Your Details
+            </h2>
+
+
+            <div class="form-grid">
+
+
+                <label>
+                    Full Name
+
+                    <input
+                        id="name"
+                        type="text"
+                        placeholder="Your name"
+                    >
+                </label>
+
+
+                <label>
+                    Age
+
+                    <input
+                        id="age"
+                        type="number"
+                        min="13"
+                        max="100"
+                        placeholder="21"
+                    >
+                </label>
+
+
+                <label>
+                    Gender
+
+                    <select id="gender">
+
+                        <option value="male">
+                            Male
+                        </option>
+
+                        <option value="female">
+                            Female
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+                <label>
+                    Height (cm)
+
+                    <input
+                        id="height"
+                        type="number"
+                        placeholder="170"
+                    >
+                </label>
+
+
+                <label>
+                    Weight (kg)
+
+                    <input
+                        id="weight"
+                        type="number"
+                        placeholder="70"
+                    >
+                </label>
+
+
+                <label>
+                    Activity Level
+
+                    <select id="activity">
+
+                        <option value="1.2">
+                            Sedentary
+                        </option>
+
+                        <option value="1.375">
+                            Light Activity
+                        </option>
+
+                        <option
+                            value="1.55"
+                            selected
+                        >
+                            Moderate Activity
+                        </option>
+
+                        <option value="1.725">
+                            Very Active
+                        </option>
+
+                        <option value="1.9">
+                            Extra Active
+                        </option>
+
+                    </select>
+
+                </label>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="card physique-card">
+
+            <span class="eyebrow">
+                CHOOSE YOUR TARGET
+            </span>
+
+            <h2>
+                What are you training for?
+            </h2>
+
+            <p>
+                Your calorie estimate and macro targets
+                change with your goal.
+            </p>
+
+
+            <div class="goal-options">
+
+
+                <button
+                    class="goal-option selected"
+                    data-goal="Build Muscle"
+                >
+
+                    <b>💪</b>
+
+                    <span>
+
+                        <strong>
+                            Build Muscle / Bulk
+                        </strong>
+
+                        <small>
+                            15×+ body weight in lb
+                        </small>
+
+                    </span>
+
+                </button>
+
+
+
+                <button
+                    class="goal-option"
+                    data-goal="Lose Fat"
+                >
+
+                    <b>🔥</b>
+
+                    <span>
+
+                        <strong>
+                            Cut / Lose Fat
+                        </strong>
+
+                        <small>
+                            10–12× body weight in lb
+                        </small>
+
+                    </span>
+
+                </button>
+
+
+
+                <button
+                    class="goal-option"
+                    data-goal="Maintain"
+                >
+
+                    <b>🎯</b>
+
+                    <span>
+
+                        <strong>
+                            Maintenance
+                        </strong>
+
+                        <small>
+                            14–16× body weight in lb
+                        </small>
+
+                    </span>
+
+                </button>
+
+
+
+                <button
+                    class="goal-option"
+                    data-goal="Athletic"
+                >
+
+                    <b>⚡</b>
+
+                    <span>
+
+                        <strong>
+                            Athletic
+                        </strong>
+
+                        <small>
+                            Active maintenance estimate
+                        </small>
+
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <button
+                class="primary-btn full dark-btn"
+                id="generateBtn"
+            >
+                Calculate My Nutrition →
+            </button>
+
+
+            <div
+                id="profileResult"
+                class="result-box"
+            ></div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="card formula-card">
+
+        <div>
+
+            <span class="eyebrow">
+                CALORIE METHOD
+            </span>
+
+            <h2>
+                How your target is estimated
+            </h2>
+
+        </div>
+
+
+        <div class="formula-grid">
+
+            <div>
+                <b>Weight</b>
+                <span>kg → lb</span>
+            </div>
+
+            <div>
+                <b>Goal multiplier</b>
+                <span>
+                    Cut 10–12× · Maintain 14–16× ·
+                    Bulk 15×+
+                </span>
+            </div>
+
+            <div>
+                <b>Protein</b>
+                <span>
+                    0.7–1.0 g/lb
+                </span>
+            </div>
+
+            <div>
+                <b>Fat</b>
+                <span>
+                    25–30% of calories
+                </span>
+            </div>
+
+            <div>
+                <b>Carbs</b>
+                <span>
+                    Remaining calories
+                </span>
+            </div>
+
+        </div>
+
+
+        <p class="muted">
+
+            This is an estimate, not a medical or dietary
+            prescription. Track your average weight for
+            3–4 weeks and adjust intake by about 200–300 kcal
+            if progress is too fast or too slow.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DIET
+===================================================== -->
+
+<section
+    id="diet"
+    class="page"
+>
+
+    <div class="page-header">
+
+        <span class="eyebrow">
+            STEP 02 · FUEL YOUR TRAINING
+        </span>
+
+        <h1>
+            Food Diet Plan
+        </h1>
+
+        <p>
+            Meal portions are scaled from your estimated
+            daily target. Choose mostly whole foods and
+            adjust portions to match your target.
+        </p>
+
+    </div>
+
+
+
+    <div class="nutrition-grid">
+
+
+        <div class="nutrition-card">
+
+            <span>🔥</span>
+
+            <small>
+                CALORIE TARGET
+            </small>
+
+            <h2 id="dietCalories">
+                —
+            </h2>
+
+        </div>
+
+
+        <div class="nutrition-card">
+
+            <span>🥩</span>
+
+            <small>
+                PROTEIN TARGET
+            </small>
+
+            <h2 id="dietProtein">
+                —
+            </h2>
+
+        </div>
+
+
+        <div class="nutrition-card">
+
+            <span>🍚</span>
+
+            <small>
+                CARBOHYDRATE TARGET
+            </small>
+
+            <h2 id="dietCarbs">
+                —
+            </h2>
+
+        </div>
+
+
+        <div class="nutrition-card">
+
+            <span>🥑</span>
+
+            <small>
+                FAT TARGET
+            </small>
+
+            <h2 id="dietFat">
+                —
+            </h2>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="diet-note card">
+
+        <b>
+            Goal:
+        </b>
+
+        <span id="dietGoal">
+            Build Muscle
+        </span>
+
+        <span class="dot">
+            •
+        </span>
+
+        <b>
+            Daily meals:
+        </b>
+
+        5
+
+    </div>
+
+
+
+    <div
+        class="meal-list"
+        id="mealList"
+    ></div>
+
+</section>
+
+
+
+<!-- =====================================================
+     WORKOUT
+===================================================== -->
+
+<section
+    id="workout"
+    class="page"
+>
+
+    <div class="page-header">
+
+        <span class="eyebrow">
+            STEP 03 · TRAIN WITH PURPOSE
+        </span>
+
+        <h1>
+            Workout Plan
+        </h1>
+
+        <p>
+            Select your experience level first.
+            Then select the plan available for that level.
+            Rest days are automatically shown.
+        </p>
+
+    </div>
+
+
+
+    <div class="workout-selector card">
+
+
+        <div class="selector-field">
+
+            <label for="workoutLevel">
+                EXPERIENCE LEVEL
+            </label>
+
+            <select id="workoutLevel">
+
+                <option value="beginner">
+                    Beginner
+                </option>
+
+                <option value="intermediate">
+                    Intermediate
+                </option>
+
+                <option value="expert">
+                    Expert
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <div class="selector-field">
+
+            <label for="workoutPlan">
+                TRAINING PLAN
+            </label>
+
+            <select id="workoutPlan"></select>
+
+        </div>
+
+
+
+        <div
+            class="level-description"
+            id="levelDescription"
+        >
+            Beginner plan: one main muscle group per day,
+            with Sunday reserved for recovery.
+        </div>
+
+    </div>
+
+
+
+    <div class="week-grid"></div>
+
+
+
+    <div class="card">
+
+        <div class="card-head">
+
+            <div>
+
+                <span
+                    class="eyebrow"
+                    id="workoutEyebrow"
+                >
+                    MONDAY · CHEST
+                </span>
+
+                <h2 id="workoutTitle">
+                    Chest
+                </h2>
+
+            </div>
+
+
+            <span
+                class="pill"
+                id="workoutDuration"
+            >
+                ⏱ 75–100 min
+            </span>
+
+        </div>
+
+
+        <div
+            class="warmup"
+            id="warmupBox"
+        ></div>
+
+
+        <div id="exerciseTable"></div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+<section
+    id="progress"
+    class="page"
+>
+
+    <div class="page-header">
+
+        <span class="eyebrow">
+            STEP 04 · CONSISTENCY
+        </span>
+
+        <h1>
+            Progress
+        </h1>
+
+        <p>
+            Mark each strength exercise complete after
+            finishing all 4 sets × 8 reps.
+        </p>
+
+    </div>
+
+
+
+    <!-- =================================================
+         STREAK CARD
+    ================================================== -->
+
+    <div class="streak-card">
+
+        <div class="streak-flame">
+            🔥
+        </div>
+
+
+        <div class="streak-number">
+
+            <span id="streakCount">
+                0
+            </span>
+
+            <span class="streak-text">
+                day streak!
+            </span>
+
+        </div>
+
+
+        <div class="streak-week">
+
+            <div class="streak-days">
+
+
+                <div
+                    class="streak-day"
+                    data-weekday="0"
+                >
+
+                    <span>
+                        Su
+                    </span>
+
+                    <div class="streak-dot"></div>
+
+                </div>
+
+
+                <div
+                    class="streak-day"
+                    data-weekday="1"
+                >
+
+                    <span>
+                        Mo
+                    </span>
+
+                    <div class="streak-dot"></div>
+
+                </div>
+
+
+                <div
+                    class="streak-day"
+                    data-weekday="2"
+                >
+
+                    <span>
+                        Tu
+                    </span>
+
+                    <div class="streak-dot"></div>
+
+                </div>
+
+
+                <div
+                    class="streak-day"
+                    data-weekday="3"
+                >
+
+                    <span>
+                        We
+                    </span>
+
+                    <div class="streak-dot"></div>
+
+                </div>
+
+
+                <div
+                    class="streak-day"
+                    data-weekday="4"
+                >
+
+                    <span>
+                        Th
+                    </span>
+
+                    <div class="streak-dot"></div>
+
+                </div>
+
+
+                <div
+                    class="streak-day"
+                    data-weekday="5"
+                >
+
+                    <span>
+                        Fr
+                    </span>
+
+                    <div class="streak-dot"></div>
+
+                </div>
+
+
+                <div
+                    class="streak-day"
+                    data-weekday="6"
+                >
+
+                    <span>
+                        Sa
+                    </span>
+
+                    <div class="streak-dot"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="streak-message">
+
+            <span id="streakMessage">
+                Complete your workouts consistently
+                to build your streak!
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         PROGRESS STATS
+    ================================================== -->
+
+    <div class="progress-grid">
+
+
+        <div class="progress-card">
+
+            <small>
+                TODAY
+            </small>
+
+            <h2 id="progressToday">
+                0 / 0
+            </h2>
+
+            <em>
+                Exercises completed
+            </em>
+
+        </div>
+
+
+        <div class="progress-card highlighted">
+
+            <small>
+                TODAY'S COMPLETION
+            </small>
+
+            <h2 id="progressPercent">
+                0%
+            </h2>
+
+            <em id="progressMessage">
+                No exercises completed yet
+            </em>
+
+        </div>
+
+
+        <div class="progress-card">
+
+            <small>
+                WEEKLY EXERCISES
+            </small>
+
+            <h2 id="weeklyCompleted">
+                0
+            </h2>
+
+            <em>
+                Completed across this plan
+            </em>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         COMPLETION PROGRESS
+    ================================================== -->
+
+    <div class="card">
+
+        <div class="card-head">
+
+            <div>
+
+                <span class="eyebrow">
+                    TODAY'S WORK
+                </span>
+
+                <h2>
+                    Completion Progress
+                </h2>
+
+            </div>
+
+
+            <strong
+                class="percentage"
+                id="progressPercent2"
+            >
+                0%
+            </strong>
+
+        </div>
+
+
+        <div class="big-bar">
+
+            <i
+                id="progressBar"
+                style="width:0%"
+            ></i>
+
+        </div>
+
+
+        <p
+            class="muted"
+            id="progressDetail"
+        >
+            Complete today's workout to update
+            your progress.
+        </p>
+
+    </div>
+
+
+
+    <!-- =================================================
+         CURRENT PLAN HISTORY
+    ================================================== -->
+
+    <div class="card">
+
+        <div class="card-head">
+
+            <div>
+
+                <span class="eyebrow">
+                    CURRENT PLAN HISTORY
+                </span>
+
+                <h2>
+                    Workout Days
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="historyList"
+            class="history-list"
+        ></div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+
+<!-- =====================================================
+     FULL IMAGE VIEWER
+===================================================== -->
+
+<div
+    id="imageModal"
+    class="image-modal"
+>
+
+    <button
+        id="closeImageModal"
+        class="close-image"
+        aria-label="Close image"
+    >
+        ✕
+    </button>
+
+
+    <img
+        id="fullWorkoutImage"
+        src=""
+        alt="Full workout demonstration"
+    >
+
+</div>
+
+
+
+<!-- =====================================================
+     TOAST
+===================================================== -->
+
+<div
+    id="toast"
+    class="toast"
+></div>
+
+
+
+<!-- =====================================================
+     STREAK LOGIC
+     This works with the existing localStorage data.
+===================================================== -->
+
+<script>
+
+function streakDateKey(date) {
+
+    const y =
+        date.getFullYear();
+
+    const m =
+        String(
+            date.getMonth() + 1
+        ).padStart(2, '0');
+
+    const d =
+        String(
+            date.getDate()
+        ).padStart(2, '0');
+
+    return `${y}-${m}-${d}`;
+}
+
+
+/* -------------------------------------------------------
+   Get dates on which the user completed exercises
+------------------------------------------------------- */
+
+function getStreakDates() {
+
+    const dates =
+        new Set();
+
+    try {
+
+        const saved =
+            JSON.parse(
+                localStorage.getItem(
+                    'bodyblueprint_state_v3'
+                )
+            ) || {};
+
+        const completed =
+            saved.completed || {};
+
+
+        Object.keys(completed)
+            .forEach(key => {
+
+                if (!completed[key]) {
+                    return;
+                }
+
+
+                /*
+                 * Completion key:
+                 *
+                 * YYYY-MM-DD_level_plan_day_index
+                 */
+
+                const date =
+                    key.substring(
+                        0,
+                        10
+                    );
+
+
+                if (
+                    /^\d{4}-\d{2}-\d{2}$/
+                        .test(date)
+                ) {
+
+                    dates.add(date);
+
+                }
+
+            });
+
+    } catch (error) {
+
+        console.error(
+            'Streak error:',
+            error
+        );
+
+    }
+
+    return dates;
+}
+
+
+/* -------------------------------------------------------
+   Calculate current streak
+------------------------------------------------------- */
+
+function calculateStreak() {
+
+    const dates =
+        getStreakDates();
+
+
+    if (dates.size === 0) {
+        return 0;
+    }
+
+
+    const today =
+        new Date();
+
+    today.setHours(
+        0,
+        0,
+        0,
+        0
+    );
+
+
+    let check =
+        new Date(today);
+
+
+    /*
+     * If today's workout hasn't been completed,
+     * allow the streak from yesterday to remain visible.
+     */
+
+    if (
+        !dates.has(
+            streakDateKey(check)
+        )
+    ) {
+
+        check.setDate(
+            check.getDate() - 1
+        );
+
+    }
+
+
+    let streak = 0;
+
+
+    while (
+        dates.has(
+            streakDateKey(check)
+        )
+    ) {
+
+        streak++;
+
+        check.setDate(
+            check.getDate() - 1
+        );
+
+    }
+
+
+    return streak;
+}
+
+
+/* -------------------------------------------------------
+   Current week
+------------------------------------------------------- */
+
+function getStreakWeek() {
+
+    const today =
+        new Date();
+
+    today.setHours(
+        0,
+        0,
+        0,
+        0
+    );
+
+
+    const sunday =
+        new Date(today);
+
+
+    sunday.setDate(
+        today.getDate() -
+        today.getDay()
+    );
+
+
+    const week = [];
+
+
+    for (
+        let i = 0;
+        i < 7;
+        i++
+    ) {
+
+        const date =
+            new Date(sunday);
+
+
+        date.setDate(
+            sunday.getDate() + i
+        );
+
+
+        week.push(date);
+
+    }
+
+
+    return week;
+}
+
+
+/* -------------------------------------------------------
+   Render streak card
+------------------------------------------------------- */
+
+function renderStreak() {
+
+    const count =
+        document.getElementById(
+            'streakCount'
+        );
+
+
+    const message =
+        document.getElementById(
+            'streakMessage'
+        );
+
+
+    const card =
+        document.querySelector(
+            '.streak-card'
+        );
+
+
+    if (
+        !count ||
+        !message ||
+        !card
+    ) {
+
+        return;
+    }
+
+
+    const streak =
+        calculateStreak();
+
+
+    count.textContent =
+        streak;
+
+
+    const dates =
+        getStreakDates();
+
+
+    const week =
+        getStreakWeek();
+
+
+    const today =
+        new Date();
+
+    today.setHours(
+        0,
+        0,
+        0,
+        0
+    );
+
+
+    const dayElements =
+        document.querySelectorAll(
+            '.streak-day'
+        );
+
+
+    dayElements.forEach(
+        (element, index) => {
+
+            const date =
+                week[index];
+
+
+            const key =
+                streakDateKey(
+                    date
+                );
+
+
+            element.classList.remove(
+                'completed',
+                'today',
+                'future'
+            );
+
+
+            if (
+                dates.has(key)
+            ) {
+
+                element.classList.add(
+                    'completed'
+                );
+
+            }
+
+
+            if (
+                key ===
+                streakDateKey(today)
+            ) {
+
+                element.classList.add(
+                    'today'
+                );
+
+            }
+
+
+            if (
+                date > today
+            ) {
+
+                element.classList.add(
+                    'future'
+                );
+
+            }
+
+        }
+    );
+
+
+    /*
+     * Count completed days this week.
+     */
+
+    const completedThisWeek =
+        week.filter(
+            date => {
+
+                return (
+                    date <= today &&
+                    dates.has(
+                        streakDateKey(date)
+                    )
+                );
+
+            }
+        ).length;
+
+
+    const todayCompleted =
+        dates.has(
+            streakDateKey(today)
+        );
+
+
+    card.classList.remove(
+        'perfect'
+    );
+
+
+    if (
+        completedThisWeek >= 6
+    ) {
+
+        card.classList.add(
+            'perfect'
+        );
+
+
+        message.innerHTML = `
+            <strong>
+                🔥 Perfect Streak!
+            </strong>
+            Keep completing your scheduled
+            workouts this week.
+        `;
+
+    }
+
+    else if (
+        todayCompleted
+    ) {
+
+        message.innerHTML = `
+            Great work! 🔥
+            Keep your streak going tomorrow.
+        `;
+
+    }
+
+    else if (
+        streak > 0
+    ) {
+
+        message.innerHTML = `
+            Complete today's workout
+            to keep your
+            <strong>
+                ${streak} day streak!
+            </strong>
+        `;
+
+    }
+
+    else {
+
+        message.innerHTML = `
+            Complete your first workout
+            to start your
+            <strong>
+                streak!
+            </strong>
+        `;
+
+    }
+
+}
+
+
+/* -------------------------------------------------------
+   Start streak system after script.js loads
+------------------------------------------------------- */
+
+document.addEventListener(
+    'DOMContentLoaded',
+    () => {
+
+        renderStreak();
+
+        /*
+         * Refresh so the streak immediately changes
+         * after an exercise is marked complete.
+         */
+
+        setInterval(
+            renderStreak,
+            500
+        );
+
+    }
+);
+
+</script>
+
+
+
+<!-- =====================================================
+     MAIN JAVASCRIPT
+===================================================== -->
+
+<script src="script.js?v=3"></script>
+
+</body>
+</html>
